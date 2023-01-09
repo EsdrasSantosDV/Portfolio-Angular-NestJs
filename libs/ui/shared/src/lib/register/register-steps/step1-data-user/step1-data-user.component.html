@@ -13,6 +13,33 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
+      <mat-label>Sex</mat-label>
+      <mat-select formControlName="sex">
+
+        <mat-option value="masculine">Masculine</mat-option>
+        <mat-option value="feminine">Feminine</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        type="text"
+        placeholder="Cpf"
+        formControlName="cpf"
+      />
+      <mat-error *ngIf="cpf.errors?.required"
+      >The cpf is mandatory.</mat-error
+      >
+      <mat-error *ngIf="cpf.errors?.pattern"
+      >The cpf is incorrect.</mat-error
+      >
+
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
       <input
         matInput
         type="email"
@@ -59,5 +86,7 @@
         >The confirm password is mandatory.</mat-error
       >
     </mat-form-field>
+
+
   </div>
 </ng-container>

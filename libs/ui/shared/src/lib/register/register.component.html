@@ -1,6 +1,6 @@
 
 
-<mat-card class="login-page">
+<div class="login-page">
 
   <div class="text-centralizar">
     <mat-card-title >Registrar</mat-card-title>
@@ -8,7 +8,7 @@
 
   <mat-card-content>
 
-    <mat-horizontal-stepper [linear]="true"
+    <mat-horizontal-stepper [linear]="false"
                             class="mat-elevation-z5" labelPosition="bottom">
 
       <mat-step [stepControl]="step1.form" errorMessage="User data has error">
@@ -65,5 +65,5 @@
 
 
   </mat-card-content>
-</mat-card>
+</div>
 

@@ -12,8 +12,10 @@ export class Step1DataUserComponent {
     {
       name:['',{validators:[Validators.required]}],
       email:['',{validators:[Validators.required,Validators.email],updateOn:'blur'}],
+      sex:['',{validators:[Validators.required]}],
       password:['',[Validators.required,Validators.minLength(8)]],
-      confirm_password:['',[Validators.required,Validators.minLength(8)]]
+      confirm_password:['',[Validators.required,Validators.minLength(8)]],
+      cpf:['',{validators:[Validators.required,Validators.pattern('/(\\d{3})(\\d{3})(\\d{3})(\\d{2})/')]}]
     }
   )
   constructor(private fb:FormBuilder) {
@@ -23,6 +25,10 @@ export class Step1DataUserComponent {
   get email()
   {
     return this.form.controls['email'];
+  }
+
+  get cpf(){
+    return this.form.controls['cpf'];
   }
 
   get name(){
