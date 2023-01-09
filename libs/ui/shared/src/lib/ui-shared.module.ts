@@ -12,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import {uiSharedRoutes} from "./lib.routes";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
@@ -21,6 +22,8 @@ import {uiSharedRoutes} from "./lib.routes";
     MaterialModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [HeaderComponent, RegisterComponent, LoginComponent],
   exports: [HeaderComponent],
