@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, Validators} from "@angular/forms";
 
 @Component({
   selector: 'ui-step1-data-user',
@@ -8,10 +8,38 @@ import {FormBuilder} from "@angular/forms";
 })
 export class Step1DataUserComponent {
 
-  form=this.fb.group(({
-
-  }))
-
+  form=this.fb.group(
+    {
+      name:['',{validators:[Validators.required]}],
+      email:['',{validators:[Validators.required,Validators.email],updateOn:'blur'}],
+      password:['',[Validators.required,Validators.minLength(8)]],
+      confirm_password:['',[Validators.required,Validators.minLength(8)]]
+    }
+  )
   constructor(private fb:FormBuilder) {
   }
+
+
+  get email()
+  {
+    return this.form.controls['email'];
+  }
+
+  get name(){
+    return this.form.controls['name'];
+  }
+
+  get password()
+  {
+    return this.form.controls['password'];
+  }
+
+
+  get confirm_password()
+  {
+    return this.form.controls['confirm_password'];
+  }
+
+
+
 }
