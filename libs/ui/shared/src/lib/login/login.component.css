@@ -1,6 +1,8 @@
 .login-page {
   max-width: 450px;
   margin: 50px auto 0 auto;
+
+
 }
 
 .login-form {
@@ -11,4 +13,8 @@
 .test-input {
   border-bottom: 1px solid grey;
   margin-bottom: 10px;
+}
+
+.text-centralizar{
+  text-align:center;
 }
