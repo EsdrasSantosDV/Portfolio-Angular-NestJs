@@ -1,50 +1,26 @@
-import { Component } from '@angular/core';
-import {NonNullableFormBuilder, Validators} from "@angular/forms";
+import {Component} from '@angular/core';
+import {FormGroup, NonNullableFormBuilder, Validators} from "@angular/forms";
+import {STEPPER_GLOBAL_OPTIONS} from "@angular/cdk/stepper";
 
 @Component({
   selector: 'ui-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
+  providers: [
+    {
+      provide: STEPPER_GLOBAL_OPTIONS, useValue: {showError:true}
+    }
+  ]
 })
 export class RegisterComponent {
 
-  form=this.fb.group(
-    {
-      email:['',{validators:[Validators.required,Validators.email],updateOn:'blur'}],
-      password:['',[Validators.required,Validators.minLength(8)]]
-    }
-  )
-
-  constructor(private fb:NonNullableFormBuilder) {
-  }
-
-
-  get email()
-  {
-    return this.form.controls['email'];
-  }
-
-  get password()
-  {
-    return this.form.controls['password'];
-  }
 
 
 
+  submit(step1:FormGroup, step2:FormGroup, step3:FormGroup) {
 
-  register() {
-    const formValue=this.form.value;
+    console.log(step1, step2, step3);
 
-    this.form.patchValue({
-
-    })
-  }
-
-  reset() {
-
-    this.form.reset();
-
-    console.log(this.form.value);
   }
 
 }

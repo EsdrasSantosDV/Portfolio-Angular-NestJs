@@ -1,58 +1,69 @@
+
+
 <mat-card class="login-page">
+
   <div class="text-centralizar">
     <mat-card-title >Registrar</mat-card-title>
   </div>
 
   <mat-card-content>
 
-    <form [formGroup]="form" class="login-form data-form">
+    <mat-horizontal-stepper [linear]="true"
+                            class="mat-elevation-z5" labelPosition="bottom">
 
-      <mat-form-field appearance="outline">
+      <mat-step [stepControl]="step1.form" errorMessage="User data has error">
 
+        <ng-template matStepLabel>User Data</ng-template>
+        <ui-step1-data-user #step1></ui-step1-data-user>
+        <div class="stepper-buttons">
 
-        <input matInput type="email" name="email"
-               placeholder="Email" formControlName="email">
-
-
-        <mat-error *ngIf="form.controls['email'].errors?.required">The email is mandatory.</mat-error>
-
-        <mat-error *ngIf="email.errors?.minlength">
-          Your email must have minimum {{email.errors?.minlength.requiredLength}} chars,
-          but it only has {{email.errors?.minlength.actualLength}}.
-        </mat-error>
-
-        <mat-error *ngIf="email.errors?.email">This is not a valid email.</mat-error>
-
-      </mat-form-field >
-
-      <mat-form-field appearance="outline">
-
-        <input matInput type="password" placeholder="Password" formControlName="password">
-        <mat-error *ngIf="password.errors?.required">The password is mandatory.</mat-error>
-
-      </mat-form-field>
-
-      <ng-container
-        *ngIf="password.errors | onlyOneError:['minlength','passwordStrength'] as error">
-
-        <div class="field-message" *ngIf="error.minlength">
-          Your password must have minimum {{error.minlength.requiredLength}} chars,
-          but it only has {{error.minlength.actualLength}}.
+          <button mat-raised-button color="primary" matStepperNext>
+            Continue to Step 2</button>
         </div>
 
-        <div class="field-message" *ngIf="error.passwordStrength">
-          Your password must have lower case, upper case and numeric characters.
+      </mat-step>
+
+
+      <mat-step [stepControl]="step2.form" errorMessage="Address data has error">
+        <ng-template matStepLabel>Address Data</ng-template>
+        <ui-step2-data-adress #step2></ui-step2-data-adress>
+        <div class="stepper-buttons">
+
+          <button mat-raised-button matStepperPrevious>Back</button>
+
+          <button mat-raised-button color="primary" matStepperNext>
+            Continue to Step 3</button>
+
         </div>
 
-      </ng-container>
 
-      <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="register()">
-        Registrar
-      </button>
+      </mat-step>
+
+      <mat-step [stepControl]="step3.form" errorMessage="Contact details in error">
+
+        <ng-template matStepLabel>Contact details</ng-template>
+
+        <ui-step3-data-contact #step3></ui-step3-data-contact>
+
+        <div class="stepper-buttons">
+
+          <button mat-raised-button matStepperPrevious>Back</button>
+
+          <button mat-raised-button color="primary"
+                  [disabled]="!step3.form.valid "
+                  (click)="submit(step1.form, step2.form, step3.form)">
+            Registrar
+          </button>
+
+        </div>
+
+      </mat-step>
+
+    </mat-horizontal-stepper>
 
 
-    </form>
 
 
   </mat-card-content>
 </mat-card>
+
