@@ -14,12 +14,12 @@
     </button>
 
     <div class="button-end">
-      <a mat-button >
+      <a mat-button routerLink="/register">
         <mat-icon>person_add</mat-icon>
         Register
       </a>
 
-      <a mat-button>
+      <a mat-button routerLink="/login">
         <mat-icon>account_circle</mat-icon>
         Login
       </a>
@@ -29,6 +29,11 @@
 
   </mat-toolbar>
 
+  <div class="main-content">
+
+    <router-outlet></router-outlet>
+
+  </div>
 
 
 
