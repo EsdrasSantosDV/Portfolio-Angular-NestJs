@@ -13,6 +13,8 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import {uiSharedRoutes} from "./lib.routes";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {UtilsModule} from "@port-esdraskhan/utils";
+
 
 @NgModule({
   imports: [
@@ -23,7 +25,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     BrowserAnimationsModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    UtilsModule
   ],
   declarations: [HeaderComponent, RegisterComponent, LoginComponent],
   exports: [HeaderComponent],
