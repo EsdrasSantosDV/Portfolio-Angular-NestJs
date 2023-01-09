@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@port-esdraskhan/material": ["libs/material/src/index.ts"],
+      "@port-esdraskhan/ui/header": ["libs/ui/header/src/index.ts"],
+      "@port-esdraskhan/ui/ui": ["libs/ui/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

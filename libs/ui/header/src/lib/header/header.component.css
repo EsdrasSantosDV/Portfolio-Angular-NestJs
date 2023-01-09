@@ -1,0 +1,15 @@
+.top-menu {
+  min-height: calc(100vh - 80px);
+}
+
+.logo {
+  height: 5rem;
+  width: 5rem;
+  cursor: pointer;
+}
+.sidenav{
+  width: 19rem;
+}
+.button-end{
+  margin-left: auto
+}
