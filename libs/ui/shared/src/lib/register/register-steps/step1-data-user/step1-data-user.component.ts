@@ -31,6 +31,11 @@ export class Step1DataUserComponent {
     return this.form.controls['cpf'];
   }
 
+  get sex()
+  {
+    return this.form.controls['sex'];
+  }
+
   get name(){
     return this.form.controls['name'];
   }

@@ -19,6 +19,8 @@
         <mat-option value="masculine">Masculine</mat-option>
         <mat-option value="feminine">Feminine</mat-option>
       </mat-select>
+
+      <mat-error *ngIf="sex.errors?.required">the Sex is mandatory</mat-error>
     </mat-form-field>
 
 
