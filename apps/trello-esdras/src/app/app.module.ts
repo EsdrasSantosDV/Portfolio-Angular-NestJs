@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import {UiHeaderModule} from "@port-esdraskhan/ui/header";
+import {UiSharedModule} from "../../../../libs/ui/shared/src";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, UiHeaderModule],
+  imports: [BrowserModule, UiSharedModule],
   providers: [],
   bootstrap: [AppComponent],
 })

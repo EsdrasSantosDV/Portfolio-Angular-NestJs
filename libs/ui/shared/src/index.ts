@@ -1,4 +1,4 @@
-export * from './lib/ui-header.module';
+export * from './lib/ui-shared.module';
 
 export * from './lib/lib.routes';
 

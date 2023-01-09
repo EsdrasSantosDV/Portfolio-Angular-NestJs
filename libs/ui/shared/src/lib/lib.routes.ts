@@ -4,7 +4,7 @@ import {HeaderComponent} from "./header/header.component";
 import {RegisterComponent} from "./register/register.component";
 import {LoginComponent} from "./login/login.component";
 
-export const uiHeaderRoutes: Route[] = [
+export const uiSharedRoutes: Route[] = [
   { path: '', pathMatch: 'full', component: HeaderComponent },
   {
     path: 'register',
