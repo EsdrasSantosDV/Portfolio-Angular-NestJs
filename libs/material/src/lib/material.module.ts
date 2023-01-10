@@ -19,6 +19,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatStepperModule} from "@angular/material/stepper";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import {MatStepperModule} from "@angular/material/stepper";
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatSlideToggleModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatMenuModule,
@@ -43,6 +45,7 @@ import {MatStepperModule} from "@angular/material/stepper";
     MatCardModule,
     MatButtonModule,
     MatSidenavModule,
+    MatSlideToggleModule,
     MatListModule,
     MatIconModule,
     MatToolbarModule,

@@ -1,4 +1,56 @@
 <ng-container>
+  <div [formGroup]="form" class="login-form data-form">
+
+    <mat-form-field appearance="outline" >
+      <input
+        matInput
+        type="number"
+        placeholder="Number House"
+        formControlName="number_house"
+      />
+      <mat-error *ngIf="number_house.errors?.required">This Number House is mandatory</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" >
+      <input
+        matInput
+        type="text"
+        placeholder="Complement"
+        formControlName="complement"
+      />
+      <mat-error *ngIf="complement.errors?.required">This Complement is mandatory</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" >
+      <input
+        matInput
+        type="text"
+        placeholder="District"
+        formControlName="district"
+      />
+      <mat-error *ngIf="district.errors?.required">This District is mandatory</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" >
+      <input
+        matInput
+        type="text"
+        placeholder="State"
+        formControlName="state"
+      />
+      <mat-error *ngIf="state.errors?.required">This State is mandatory</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" >
+      <input
+        matInput
+        type="text"
+        placeholder="Cep"
+        formControlName="cep"
+      />
+      <mat-error *ngIf="cep.errors?.required">This Cep is mandatory</mat-error>
+    </mat-form-field>
 
 
+  </div>
 </ng-container>

@@ -35,14 +35,16 @@
       <ng-container
         *ngIf="password.errors | onlyOneError:['minlength','passwordStrength'] as error">
 
-        <div class="field-message" *ngIf="error.minlength">
+        <mat-error *ngIf="error.minlength">
           Your password must have minimum {{error.minlength.requiredLength}} chars,
           but it only has {{error.minlength.actualLength}}.
-        </div>
+        </mat-error>
 
-        <div class="field-message" *ngIf="error.passwordStrength">
+        <mat-error *ngIf="error.passwordStrength">
           Your password must have lower case, upper case and numeric characters.
-        </div>
+        </mat-error>
+
+
 
       </ng-container>
 
