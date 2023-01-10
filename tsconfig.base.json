@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@port-esdraskhan/data": ["libs/data/src/index.ts"],
       "@port-esdraskhan/material": ["libs/material/src/index.ts"],
       "@port-esdraskhan/ui/header": ["libs/ui/header/src/index.ts"],
       "@port-esdraskhan/ui/ui": ["libs/ui/ui/src/index.ts"],

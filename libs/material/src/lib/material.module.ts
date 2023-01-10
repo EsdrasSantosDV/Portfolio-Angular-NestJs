@@ -20,6 +20,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 @NgModule({
   imports: [
@@ -38,9 +39,11 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
     MatFormFieldModule,
     MatPaginatorModule,
     MatSortModule,
+    DragDropModule,
     MatDialogModule,
   ],
   exports: [
+    DragDropModule,
     MatInputModule,
     MatCardModule,
     MatButtonModule,

@@ -5,7 +5,11 @@ import {RegisterComponent} from "./register/register.component";
 import {LoginComponent} from "./login/login.component";
 
 export const uiSharedRoutes: Route[] = [
-  { path: '', pathMatch: 'full', component: HeaderComponent },
+  { path: '', pathMatch: 'full', redirectTo:"/kanban" },
+  {
+    path:"kanban",
+    loadChildren:()=>import('./kanban/kanban.module').then(m=>m.KanbanModule),
+  },
   {
     path: 'register',
     component: RegisterComponent
