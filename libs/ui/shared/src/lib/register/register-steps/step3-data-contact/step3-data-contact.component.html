@@ -1,9 +1,18 @@
 <div [formGroup]="form" class="login-form data-form">
   <div class="add-contacts-form">
     <ng-container formArrayName="contacts">
-      <ng-container *ngFor="let contactsForm of contacts.controls; let i = index">
-        <div class="contact-form-row" fxLayout="row" fxLayoutGap="15px" [formGroupName]="i">
-          <mat-slide-toggle formControlName="isPhone">is Phone?</mat-slide-toggle>
+      <ng-container
+        *ngFor="let contactsForm of contacts.controls; let i = index"
+      >
+        <div
+          class="contact-form-row"
+          fxLayout="row"
+          fxLayoutGap="15px"
+          [formGroupName]="i"
+        >
+          <mat-slide-toggle formControlName="isPhone"
+            >is Phone?</mat-slide-toggle
+          >
 
           <mat-form-field appearance="outline">
             <input
@@ -14,23 +23,16 @@
             />
           </mat-form-field>
 
-          <mat-icon  (click)="deleteContact(i)"
-          >delete_forever</mat-icon
-          >
+          <mat-icon (click)="deleteContact(i)">delete_forever</mat-icon>
         </div>
       </ng-container>
     </ng-container>
 
-    <button mat-mini-fab color="primary" (click)="addContacts()">
-      <mat-icon>add</mat-icon>
-    </button>
-    <div>
-      <p>
-        {{form.value |json}}
-      </p>
-
+    <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="1em">
+      <mat-label> Adding Contact </mat-label>
+      <button mat-mini-fab color="primary" (click)="addContacts()">
+        <mat-icon>add</mat-icon>
+      </button>
     </div>
   </div>
-
-
 </div>
