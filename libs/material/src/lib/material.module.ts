@@ -21,6 +21,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {DragDropModule} from "@angular/cdk/drag-drop";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 @NgModule({
   imports: [
@@ -41,11 +42,13 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
     MatSortModule,
     DragDropModule,
     MatDialogModule,
+    MatExpansionModule
   ],
   exports: [
     DragDropModule,
     MatInputModule,
     MatCardModule,
+    MatExpansionModule,
     MatButtonModule,
     MatSidenavModule,
     MatSlideToggleModule,

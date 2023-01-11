@@ -1,70 +1,27 @@
 
 <div class="drag-drop-container" cdkDropListGroup >
+  <mat-card class="example-container">
+      <mat-card-title>
+        {{titleMural}}
+      </mat-card-title>
 
-  <div class="pending">
+      <div cdkDropList
+           [cdkDropListData]="tasks"
 
-    <h3>Lessons To Watch:</h3>
+           (cdkDropListDropped)=" dropMultiList($event)"
+      >
+        <div *ngFor="let task of tasks" cdkDrag>
+          <div class="drop-placeholder" *cdkDragPlaceholder>
+          </div>
+          <ui-task-kanban [task]="task">
 
-
-    <div cdkDropList class="lessons-list"
-         [cdkDropListData]="lessons"
-         (cdkDropListDropped)=" dropMultiList($event)"
-    >
-
-
-      <!--      ESTAMOS FALANDO AGORA QQUE AS LICOES PODEM SER DRAGS-->
-      <div class="lesson drag-drop-item" *ngFor="let lesson of lessons" cdkDrag>
-
-        <!--        VAI FICAR COM A BORDA PRETA ATRAS NO PLACE, MELHORANDO A UX EXPERINCE-->
-        <div class="drop-placeholder" *cdkDragPlaceholder>
-
-        </div>
-        {{lesson.description}}
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="done">
-    <h3>Done:</h3>
-
-    <div cdkDropList class="lessons-list"
-         [cdkDropListData]="done"
-         (cdkDropListDropped)="dropMultiList($event)"
-    >
-
-      <div class="lesson drag-drop-item" *ngFor="let lesson of done" cdkDrag>
-
-        <div class="drop-placeholder" *cdkDragPlaceholder>
+          </ui-task-kanban>
 
         </div>
-        {{lesson.description}}
       </div>
 
-    </div>
-
-  </div>
-
-  <div class="done">
-    <h3>Test:</h3>
-
-    <div cdkDropList class="lessons-list"
-         [cdkDropListData]="text"
-         (cdkDropListDropped)="dropMultiList($event)"
-    >
-
-      <div class="lesson drag-drop-item" *ngFor="let lesson of text" cdkDrag>
-
-        <div class="drop-placeholder" *cdkDragPlaceholder>
-
-        </div>
-        {{lesson.description}}
-      </div>
-
-    </div>
-
-    <button mat-button >Primary</button>
-  </div>
+  </mat-card>
 
 </div>
+
+
