@@ -11,8 +11,18 @@ import {Task} from "../../../../../../data/src/lib/model/task";
 })
 export class ListDragAndDropsKanbanComponent implements OnInit{
 
-  @Input()
-  titleMural?:string;
+
+  _title_Mural!:string;
+  get titleMural(){
+    return this._title_Mural;
+  }
+  @Input() set
+  titleMural(value:string)
+  {
+    if(value){
+      this._title_Mural=value;
+    }
+  }
 
   tasks:Task[] = [
     {

@@ -1,40 +1,57 @@
 
 
-<mat-sidenav-container fullscreen class="top-menu">
-  <mat-sidenav #sidenav class="sidenav">
-    <mat-nav-list (click)="sidenav.close()">
+<div class="top-menu">
+
+  <mat-sidenav-container fullscreen >
+    <mat-sidenav #sidenav class="sidenav">
+      <mat-nav-list (click)="sidenav.close()">
 
 
-    </mat-nav-list>
-  </mat-sidenav>
+      </mat-nav-list>
+    </mat-sidenav>
 
-  <mat-toolbar color="primary" fxLayout="row" >
-    <button mat-icon-button (click)="sidenav.open()" >
-      <img src="assets/images/trelloimage.png">
-    </button>
+    <mat-toolbar color="primary"  class="tool-bar" >
 
-    <div class="button-end">
-      <a mat-button routerLink="/register">
-        <mat-icon>person_add</mat-icon>
-        Register
-      </a>
+      <div fxLayout="row" style="width: 100%">
+        <div fxFlex="30" fxLayoutAlign="start center" >
+          <button mat-icon-button (click)="sidenav.open()" >
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
 
-      <a mat-button routerLink="/login">
-        <mat-icon>account_circle</mat-icon>
-        Login
-      </a>
+          <div fxFlex="60" fxLayoutAlign="center center" >
+            <img src="assets/images/trelloimage.png" routerLink="/" class="logo">
+          </div>
+
+
+
+
+
+        <div class="button-end" fxLayoutAlign="end center" fxFlex="30">
+          <a mat-button routerLink="/register">
+            <mat-icon>person_add</mat-icon>
+            Register
+          </a>
+
+          <a mat-button routerLink="/login">
+            <mat-icon>account_circle</mat-icon>
+            Login
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </mat-toolbar>
+
+    <div class="main-content">
+
+      <router-outlet></router-outlet>
 
     </div>
 
 
-  </mat-toolbar>
 
-  <div class="main-content">
-
-    <router-outlet></router-outlet>
-
-  </div>
-
-
-
-</mat-sidenav-container>
+  </mat-sidenav-container>
+</div>
