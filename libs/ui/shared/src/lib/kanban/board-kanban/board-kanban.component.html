@@ -3,7 +3,7 @@
   <ui-list-drag-and-drops-kanban *ngFor="let mural of murals">
   </ui-list-drag-and-drops-kanban>
 
+  <ui-create-mural (muralCreated)="muralCreate($event)"></ui-create-mural>
 
-  <button (click)="addMurals()" mat-raised-button color="primary">Add Murals</button>
 </div>
 

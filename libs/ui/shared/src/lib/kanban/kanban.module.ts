@@ -6,13 +6,17 @@ import { ListDragAndDropsKanbanComponent } from './list-drag-and-drops-kanban/li
 import { MaterialModule } from '@port-esdraskhan/material';
 import { BoardKanbanComponent } from './board-kanban/board-kanban.component';
 import { TaskKanbanComponent } from './task-kanban/task-kanban.component';
+import { CreateMuralComponent } from './create-mural/create-mural.component';
+import {FlexLayoutModule, FlexModule} from "@angular/flex-layout";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     ListDragAndDropsKanbanComponent,
     BoardKanbanComponent,
     TaskKanbanComponent,
+    CreateMuralComponent,
   ],
-  imports: [CommonModule, KanbanRoutingModule, MaterialModule],
+  imports: [CommonModule, KanbanRoutingModule, MaterialModule, FlexModule,FlexLayoutModule,ReactiveFormsModule,FormsModule],
 })
 export class KanbanModule {}

@@ -10,11 +10,11 @@ export class BoardKanbanComponent {
 
   murals:ListDragAndDropsKanbanComponent[]=[]
   newList=new ListDragAndDropsKanbanComponent();
-
   constructor() {
   }
 
-  addMurals() {
+  muralCreate($event: string) {
+    this.newList.titleMural=$event;
     this.murals.push(this.newList);
   }
 }
