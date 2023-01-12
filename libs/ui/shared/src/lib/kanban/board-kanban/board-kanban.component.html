@@ -1,9 +1,7 @@
-
 <div class="list-container" cdkDropListGroup>
-  <ui-list-drag-and-drops-kanban *ngFor="let mural of murals">
-  </ui-list-drag-and-drops-kanban>
-
+  <div *ngFor="let mural of murals">
+    <ui-list-drag-and-drops-kanban [mural]="mural">
+    </ui-list-drag-and-drops-kanban>
+  </div>
   <ui-create-mural (muralCreated)="muralCreate($event)"></ui-create-mural>
-
 </div>
-

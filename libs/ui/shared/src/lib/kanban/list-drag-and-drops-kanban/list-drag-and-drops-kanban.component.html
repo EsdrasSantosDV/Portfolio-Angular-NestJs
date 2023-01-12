@@ -2,7 +2,13 @@
 <div class="drag-drop-container" cdkDropListGroup >
   <mat-card class="example-container">
       <mat-card-title>
-        {{titleMural}} T
+        <div fxLayout="row">
+          <p fxLayoutAlign="center">
+            {{_Mural.title}}
+          </p>
+        </div>
+
+
       </mat-card-title>
 
       <div cdkDropList
@@ -19,6 +25,9 @@
 
         </div>
       </div>
+    <ui-create-mural>
+
+    </ui-create-mural>
 
   </mat-card>
 

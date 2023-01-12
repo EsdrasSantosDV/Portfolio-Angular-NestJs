@@ -3,24 +3,25 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag
 import {Lesson} from "../../../../../../data/src/lib/model/lesson";
 import {TaskKanbanComponent} from "../task-kanban/task-kanban.component";
 import {Task} from "../../../../../../data/src/lib/model/task";
+import {Mural} from "../../../../../../data/src/lib/model/Mural";
 
 @Component({
   selector: 'ui-list-drag-and-drops-kanban',
   templateUrl: './list-drag-and-drops-kanban.component.html',
   styleUrls: ['./list-drag-and-drops-kanban.component.scss'],
 })
-export class ListDragAndDropsKanbanComponent implements OnInit{
+export class ListDragAndDropsKanbanComponent {
 
 
-  _title_Mural!:string;
-  get titleMural(){
-    return this._title_Mural;
+  _Mural!:Mural;
+  get mural(){
+    return this._Mural;
   }
   @Input() set
-  titleMural(value:string)
+  mural(value:Mural)
   {
     if(value){
-      this._title_Mural=value;
+      this._Mural=value;
     }
   }
 
@@ -33,9 +34,7 @@ export class ListDragAndDropsKanbanComponent implements OnInit{
   ];
   constructor() {
   }
-  ngOnInit(): void {
-    console.log(this.titleMural);
-  }
+
   dropMultiList(event: CdkDragDrop<Task[]>){
 
     if(event.previousContainer==event.container)

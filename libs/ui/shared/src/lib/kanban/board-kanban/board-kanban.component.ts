@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnChanges, SimpleChanges} from '@angular/core';
 import {ListDragAndDropsKanbanComponent} from "../list-drag-and-drops-kanban/list-drag-and-drops-kanban.component";
+import {Mural} from "../../../../../../data/src/lib/model/Mural";
 
 @Component({
   selector: 'ui-board-kanban',
@@ -7,14 +8,9 @@ import {ListDragAndDropsKanbanComponent} from "../list-drag-and-drops-kanban/lis
   styleUrls: ['./board-kanban.component.css'],
 })
 export class BoardKanbanComponent {
-
-  murals:ListDragAndDropsKanbanComponent[]=[]
-  newList=new ListDragAndDropsKanbanComponent();
-  constructor() {
-  }
-
+  murals:Mural[]=[]
+  constructor() {}
   muralCreate($event: string) {
-    this.newList.titleMural=$event;
-    this.murals.push(this.newList);
+    this.murals.push({title:$event});
   }
 }
