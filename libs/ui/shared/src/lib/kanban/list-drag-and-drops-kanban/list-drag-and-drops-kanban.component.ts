@@ -31,10 +31,9 @@ export class ListDragAndDropsKanbanComponent {
   constructor() {}
 
   dropMultiList(event: CdkDragDrop<Task[]>) {
-    console.log(event.previousContainer);
-    console.log(event.container);
+
     if (event.previousContainer == event.container) {
-      moveItemInArray(this.tasks, event.previousIndex, event.currentIndex);
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
       transferArrayItem(
         event.previousContainer.data,
@@ -43,6 +42,8 @@ export class ListDragAndDropsKanbanComponent {
         event.currentIndex
       );
     }
+
+    console.log(this.tasks);
   }
 
   drop(event: CdkDragDrop<Task[]>) {
@@ -51,7 +52,6 @@ export class ListDragAndDropsKanbanComponent {
 
   taskCreate($event: string) {
     this.tasks.push({
-      id: 1,
       title: $event,
       description: 'asdasddasdsasda dasfdasf',
     });

@@ -1,5 +1,5 @@
 
-<div class="drag-drop-container" cdkDropListGroup >
+
   <mat-card class="example-container">
       <mat-card-title>
         <div fxLayout="row">
@@ -8,12 +8,10 @@
           </p>
         </div>
 
-
       </mat-card-title>
 
       <div cdkDropList
            [cdkDropListData]="tasks"
-
            (cdkDropListDropped)=" dropMultiList($event)"
       >
         <div *ngFor="let task of tasks" cdkDrag>
@@ -30,7 +28,5 @@
 
 
   </mat-card>
-
-</div>
 
 
