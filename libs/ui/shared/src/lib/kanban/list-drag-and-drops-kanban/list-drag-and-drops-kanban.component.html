@@ -10,11 +10,11 @@
 
       </mat-card-title>
 
-      <div cdkDropList
+      <div class="example-list" cdkDropList
            [cdkDropListData]="tasks"
            (cdkDropListDropped)=" dropMultiList($event)"
       >
-        <div *ngFor="let task of tasks" cdkDrag>
+        <div  *ngFor="let task of tasks" cdkDrag>
           <div class="drop-placeholder" *cdkDragPlaceholder>
           </div>
           <ui-task-kanban [task]="task">
@@ -23,6 +23,8 @@
 
         </div>
       </div>
+
+
 
     <ui-generic-expansion-input [labelProperty]="'Add Task'" (inputCreated)="taskCreate($event)"></ui-generic-expansion-input>
 
