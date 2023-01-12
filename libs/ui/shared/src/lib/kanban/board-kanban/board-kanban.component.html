@@ -3,5 +3,5 @@
     <ui-list-drag-and-drops-kanban [mural]="mural">
     </ui-list-drag-and-drops-kanban>
   </div>
-  <ui-create-mural (muralCreated)="muralCreate($event)"></ui-create-mural>
+  <ui-generic-expansion-input [labelProperty]="'Add Mural'" (inputCreated)="muralCreate($event)"></ui-generic-expansion-input>
 </div>

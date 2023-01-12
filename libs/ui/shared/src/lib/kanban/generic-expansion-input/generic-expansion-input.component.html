@@ -1,0 +1,31 @@
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <mat-icon>add</mat-icon> {{labelProperty}}
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div fxLayout="row" fxLayoutGap="3px">
+    <mat-form-field appearance="outline" fxFlex="60">
+      <input
+        matInput
+        name="modelInput"
+        [(ngModel)]="modelInput"
+        #ref_Input="ngModel"
+        required
+      />
+      <mat-error *ngIf="ref_Input.errors?.required"
+      >The Input is mandatory.</mat-error
+      >
+    </mat-form-field>
+    <button
+      [disabled]="!ref_Input.valid"
+      (click)="addInput()"
+      fxFlex="40"
+      mat-raised-button
+      color="primary"
+    >
+      {{labelProperty}}
+    </button>
+  </div>
+
+</mat-expansion-panel>

@@ -7,8 +7,9 @@ import { MaterialModule } from '@port-esdraskhan/material';
 import { BoardKanbanComponent } from './board-kanban/board-kanban.component';
 import { TaskKanbanComponent } from './task-kanban/task-kanban.component';
 import { CreateMuralComponent } from './create-mural/create-mural.component';
-import {FlexLayoutModule, FlexModule} from "@angular/flex-layout";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GenericExpansionInputComponent } from './generic-expansion-input/generic-expansion-input.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     BoardKanbanComponent,
     TaskKanbanComponent,
     CreateMuralComponent,
+    GenericExpansionInputComponent,
   ],
-  imports: [CommonModule, KanbanRoutingModule, MaterialModule, FlexModule,FlexLayoutModule,ReactiveFormsModule,FormsModule],
+  imports: [
+    CommonModule,
+    KanbanRoutingModule,
+    MaterialModule,
+    FlexModule,
+    FlexLayoutModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
 })
 export class KanbanModule {}
