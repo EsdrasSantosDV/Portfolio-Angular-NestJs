@@ -1,16 +1,12 @@
-.drag-drop-container {
-  font-family: 'Roboto';
-  display: flex;
-  justify-content: center;
-}
 
 
 .example-container {
   width: 250px;
   max-width: 100%;
   margin: 0 25px 25px 0;
-  display: inline-block;
   vertical-align: top;
+  display: inline-block;
+  justify-content: center;
 }
 
 .example-list {
@@ -31,7 +27,10 @@
 
 
 .cdk-drag-placeholder {
-  opacity: 0;
+  background: #091e4240;
+  border: solid 3px #091e4240;
+  min-height: 60px;
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 .cdk-drag-animating {
