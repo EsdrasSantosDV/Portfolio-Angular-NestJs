@@ -17,6 +17,8 @@ node_modules
 .settings/
 *.sublime-workspace
 
+.prisma/migrations
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json

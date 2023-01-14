@@ -4,7 +4,13 @@
   "license": "MIT",
   "scripts": {
     "ng": "nx",
-    "postinstall": "node ./decorate-angular-cli.js"
+    "postinstall": "node ./decorate-angular-cli.js",
+    "prisma:generate": "prisma generate",
+    "studio": "npx prisma studio",
+    "migrate": "npx prisma migrate dev",
+    "generate": "npx prisma generate"
+
+
   },
   "private": true,
   "dependencies": {
