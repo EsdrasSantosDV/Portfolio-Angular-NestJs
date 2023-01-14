@@ -19,9 +19,13 @@
   padding: 10px;
 }
 
+
 .titleMural{
   overflow: hidden;
+  flex-basis: 100%;
   display: block;
+  flex-flow: wrap;
+  word-wrap: break-word;
   width: 100%;
 }
 .cdk-drag-preview {

@@ -1,34 +1,39 @@
+<mat-card class="example-container" >
 
+    <mat-card-actions fxLayout="row" fxLayoutAlign="end center" class="actions-top">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Add Card</button>
+        <button mat-menu-item>Copy List</button>
+        <button mat-menu-item>Move List</button>
+        <button mat-menu-item>Archive List</button>
+      </mat-menu>
+    </mat-card-actions>
 
-  <mat-card class="example-container">
-      <mat-card-title class="titleMural">
-        <div fxLayout="row">
-          <p fxLayoutAlign="center">
-            {{_Mural.title}}
-          </p>
-        </div>
-
-      </mat-card-title>
-
-      <div class="example-list" cdkDropList
-           [cdkDropListData]="tasks"
-           (cdkDropListDropped)=" dropMultiList($event)"
-      >
-        <div  *ngFor="let task of tasks" cdkDrag>
-          <div class="drop-placeholder" *cdkDragPlaceholder>
-          </div>
-          <ui-task-kanban [task]="task">
-
-          </ui-task-kanban>
-
-        </div>
+    <mat-card-title>
+      <div class="titleMural" fxLayout="row wrap">
+        <p fxFlex="grow">
+          {{ _Mural.title }}
+        </p>
       </div>
+    </mat-card-title>
 
+  <div
+    class="example-list"
+    cdkDropList
+    [cdkDropListData]="tasks"
+    (cdkDropListDropped)="dropMultiList($event)"
+  >
+    <div *ngFor="let task of tasks" cdkDrag>
+      <div class="drop-placeholder" *cdkDragPlaceholder></div>
+      <ui-task-kanban [task]="task"> </ui-task-kanban>
+    </div>
+  </div>
 
-
-    <ui-generic-expansion-input [labelProperty]="'Add Task'" (inputCreated)="taskCreate($event)"></ui-generic-expansion-input>
-
-
-  </mat-card>
-
-
+  <ui-generic-expansion-input
+    [labelProperty]="'Add Task'"
+    (inputCreated)="taskCreate($event)"
+  ></ui-generic-expansion-input>
+</mat-card>
