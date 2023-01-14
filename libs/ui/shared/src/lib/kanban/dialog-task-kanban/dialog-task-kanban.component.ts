@@ -63,7 +63,7 @@ export class DialogTaskKanbanComponent  {
     {
       id:7,
       titleLabel:'Magenta',
-      color:'#800080'
+      color:'#FF00FF'
     },
     {
       id:8,
@@ -107,17 +107,29 @@ export class DialogTaskKanbanComponent  {
               private dialogRef: MatDialogRef<DialogTaskKanbanComponent>) {
     this.titleTask = task.title;
   }
-
   close() {
 
     this.dialogRef.close();
 
   }
-
   save() {
 
     this.dialogRef.close(this.form.value);
 
+  }
+  onHandTagRemoved(handTag: Label) {
+    const labels = this.form.controls['handTag'].value as Label[];
+    this.removeFirst(labels, handTag);
+    this.form.controls['handTag'].setValue([...labels]);
+  }
+  private removeFirst<T>(array: T[], toRemove: T): void {
+    const index = array.indexOf(toRemove);
+    if (index !== -1) {
+      array.splice(index, 1);
+    }
+  }
+  compareFn(c1: any, c2: any): boolean {
+    return c1 && c2 ? c1.id === c2.id : c1 === c2;
   }
 
 

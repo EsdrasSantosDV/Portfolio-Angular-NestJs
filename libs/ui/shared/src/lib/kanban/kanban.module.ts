@@ -11,6 +11,7 @@ import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GenericExpansionInputComponent } from './generic-expansion-input/generic-expansion-input.component';
 import { DialogTaskKanbanComponent } from './dialog-task-kanban/dialog-task-kanban.component';
+import {MatLegacyChipsModule} from "@angular/material/legacy-chips";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DialogTaskKanbanComponent } from './dialog-task-kanban/dialog-task-kanb
     FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
+    MatLegacyChipsModule,
   ],
 })
 export class KanbanModule {}

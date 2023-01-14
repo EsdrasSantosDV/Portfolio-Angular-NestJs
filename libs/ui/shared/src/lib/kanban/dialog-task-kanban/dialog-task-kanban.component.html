@@ -27,7 +27,7 @@
       >
 
       <mat-error *ngIf="description.errors?.minMaxLength">
-        have between 50 and 300 characters
+        have between 10 and 300 characters
       </mat-error>
     </mat-form-field>
 
@@ -50,27 +50,35 @@
       ></mat-datepicker-toggle>
       <mat-date-range-picker #datePickerTask></mat-date-range-picker>
     </mat-form-field>
-
     <mat-form-field appearance="outline">
       <mat-label>Labels</mat-label>
-      <mat-select formControlName="handTag" multiple>
+      <mat-select
+        formControlName="handTag"
+        multiple
+        [compareWith]="compareFn"
+      >
         <mat-select-trigger>
-          {{handTag.value?.[0] || ''}}
-          <span
-            *ngIf="(handTag.value?.length || 0) > 1"
-
-          >
-            (+{{ (handTag.value?.length || 0) - 1 }}
-            {{ handTag.value?.length === 2 ? 'other' : 'others' }})
-          </span>
+          <mat-chip-list>
+            <mat-chip
+              *ngFor="let handTag of handTag.value"
+              [removable]="true"
+              (removed)="onHandTagRemoved(handTag)"
+              [ngStyle]="{'background-color': handTag.color}"
+            >
+              {{ handTag.titleLabel }}
+              <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+          </mat-chip-list>
         </mat-select-trigger>
-        <mat-option *ngFor="let topping of handTagList" [value]="topping">{{topping.titleLabel}}</mat-option>
+        <mat-option *ngFor="let handTag of handTagList" [value]="handTag" >{{
+          handTag.titleLabel
+          }}</mat-option>
       </mat-select>
-
       <mat-error *ngIf="handTag.errors?.required">
         The HandTag is mandatory
       </mat-error>
     </mat-form-field>
+
   </mat-dialog-content>
 
   <mat-dialog-actions>
