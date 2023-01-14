@@ -6,7 +6,7 @@ import { ListDragAndDropsKanbanComponent } from './list-drag-and-drops-kanban/li
 import { MaterialModule } from '@port-esdraskhan/material';
 import { BoardKanbanComponent } from './board-kanban/board-kanban.component';
 import { TaskKanbanComponent } from './task-kanban/task-kanban.component';
-import { CreateMuralComponent } from './create-mural/create-mural.component';
+
 import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GenericExpansionInputComponent } from './generic-expansion-input/generic-expansion-input.component';
@@ -17,7 +17,6 @@ import { DialogTaskKanbanComponent } from './dialog-task-kanban/dialog-task-kanb
     ListDragAndDropsKanbanComponent,
     BoardKanbanComponent,
     TaskKanbanComponent,
-    CreateMuralComponent,
     GenericExpansionInputComponent,
     DialogTaskKanbanComponent,
   ],

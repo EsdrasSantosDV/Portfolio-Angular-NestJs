@@ -22,6 +22,7 @@ import {MatStepperModule} from "@angular/material/stepper";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {MatExpansionModule} from "@angular/material/expansion";
+import {MatChipsModule} from "@angular/material/chips";
 
 @NgModule({
   imports: [
@@ -42,6 +43,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
     MatSortModule,
     DragDropModule,
     MatDialogModule,
+    MatChipsModule,
     MatExpansionModule
   ],
   exports: [
@@ -49,6 +51,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
     MatInputModule,
     MatCardModule,
     MatExpansionModule,
+   MatChipsModule,
     MatButtonModule,
     MatSidenavModule,
     MatSlideToggleModule,

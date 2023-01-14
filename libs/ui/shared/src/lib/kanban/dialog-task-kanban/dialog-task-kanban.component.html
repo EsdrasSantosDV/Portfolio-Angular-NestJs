@@ -1,5 +1,5 @@
 <div class="edit-task-form">
-  <h2  class="title">{{ titleTask }}</h2>
+  <h2 class="title">{{ titleTask }}</h2>
 
   <mat-dialog-content [formGroup]="form">
     <mat-form-field appearance="outline">
@@ -13,8 +13,26 @@
         >The Title is mandatory.</mat-error
       >
     </mat-form-field>
+
     <mat-form-field appearance="outline">
-      <mat-date-range-input [rangePicker]="promoPicker">
+      <textarea
+        matInput
+        placeholder="Description"
+        formControlName="description"
+      >
+      </textarea>
+
+      <mat-error *ngIf="description.errors?.required"
+        >The Description is mandatory.</mat-error
+      >
+
+      <mat-error *ngIf="description.errors?.minMaxLength">
+        have between 50 and 300 characters
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-date-range-input [rangePicker]="datePickerTask">
         <input
           matStartDate
           placeholder="Start date"
@@ -22,14 +40,36 @@
         />
         <input matEndDate placeholder="End date" formControlName="dateEndAt" />
       </mat-date-range-input>
+
       <mat-error *ngIf="form.errors?.dateRange">
         The start date must be before the end date.</mat-error
       >
       <mat-datepicker-toggle
         matSuffix
-        [for]="promoPicker"
+        [for]="datePickerTask"
       ></mat-datepicker-toggle>
-      <mat-date-range-picker #promoPicker></mat-date-range-picker>
+      <mat-date-range-picker #datePickerTask></mat-date-range-picker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Labels</mat-label>
+      <mat-select formControlName="handTag" multiple>
+        <mat-select-trigger>
+          {{handTag.value?.[0] || ''}}
+          <span
+            *ngIf="(handTag.value?.length || 0) > 1"
+
+          >
+            (+{{ (handTag.value?.length || 0) - 1 }}
+            {{ handTag.value?.length === 2 ? 'other' : 'others' }})
+          </span>
+        </mat-select-trigger>
+        <mat-option *ngFor="let topping of handTagList" [value]="topping">{{topping}}</mat-option>
+      </mat-select>
+
+      <mat-error *ngIf="handTag.errors?.required">
+        The HandTag is mandatory
+      </mat-error>
     </mat-form-field>
   </mat-dialog-content>
 
