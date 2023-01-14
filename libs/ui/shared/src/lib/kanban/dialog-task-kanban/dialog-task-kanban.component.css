@@ -1,0 +1,24 @@
+
+.edit-task-form {
+
+}
+
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.title{
+  overflow: hidden;
+  flex-basis: 100%;
+  display: block;
+  flex-flow: wrap;
+  word-wrap: break-word;
+  width: 100%;
+}
+

@@ -53,7 +53,11 @@ export class ListDragAndDropsKanbanComponent {
   taskCreate($event: string) {
     this.tasks.push({
       title: $event,
-      description: 'asdasddasdsasda dasfdasf',
+      description: '',
+      dateStartAt:'',
+      dateEndAt:'',
+      handTag:'',
+
     });
   }
 }

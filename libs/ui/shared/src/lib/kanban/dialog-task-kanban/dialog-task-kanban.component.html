@@ -1,0 +1,48 @@
+<div class="edit-task-form">
+  <h2  class="title">{{ titleTask }}</h2>
+
+  <mat-dialog-content [formGroup]="form">
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        type="text"
+        placeholder="Title Task"
+        formControlName="title"
+      />
+      <mat-error *ngIf="title.errors?.required"
+        >The Title is mandatory.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-date-range-input [rangePicker]="promoPicker">
+        <input
+          matStartDate
+          placeholder="Start date"
+          formControlName="dateStartAt"
+        />
+        <input matEndDate placeholder="End date" formControlName="dateEndAt" />
+      </mat-date-range-input>
+      <mat-error *ngIf="form.errors?.dateRange">
+        The start date must be before the end date.</mat-error
+      >
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="promoPicker"
+      ></mat-datepicker-toggle>
+      <mat-date-range-picker #promoPicker></mat-date-range-picker>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="close()">Close</button>
+
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!form.valid"
+      (click)="save()"
+    >
+      Save
+    </button>
+  </mat-dialog-actions>
+</div>

@@ -26,3 +26,8 @@
   word-wrap: break-word;
   width: 100%;
 }
+
+.icons-task
+{
+  width: 5%;  display: flex; justify-content: flex-end;
+}

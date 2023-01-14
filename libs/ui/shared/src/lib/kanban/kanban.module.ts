@@ -10,6 +10,7 @@ import { CreateMuralComponent } from './create-mural/create-mural.component';
 import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GenericExpansionInputComponent } from './generic-expansion-input/generic-expansion-input.component';
+import { DialogTaskKanbanComponent } from './dialog-task-kanban/dialog-task-kanban.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { GenericExpansionInputComponent } from './generic-expansion-input/generi
     TaskKanbanComponent,
     CreateMuralComponent,
     GenericExpansionInputComponent,
+    DialogTaskKanbanComponent,
   ],
   imports: [
     CommonModule,
