@@ -2,11 +2,13 @@ import {Component, Inject} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material/dialog";
 import {Task} from "../../../../../../data/src/lib/model/task";
+import {Label} from "../../../../../../data/src/lib/model/Label";
 import {
 
   dateRangeValidator
 } from "../../../../../../utils/src/lib/validators/date-range-validator";
 import {minMaxLengthValidator} from "../../../../../../utils/src/lib/validators/min-max-length-descriptionTask";
+
 
 @Component({
   selector: 'ui-dialog-task-kanban',
@@ -27,14 +29,58 @@ export class DialogTaskKanbanComponent  {
       validators:[dateRangeValidator('dateStartAt', 'dateEndAt')]
     });
 
-  handTagList:string[]=[
-    'ETIQUETA 01',
-    'ETIQUETA 02',
-    'ETIQUETA 03',
-    'ETIQUETA 04',
-    'ETIQUETA 05'
-    ]
-
+  handTagList:Label[]=[
+    {
+      id:1,
+      titleLabel:'Branco',
+      color:'#FFFFFF'
+    },
+    {
+      id:2,
+      titleLabel:'Preto',
+      color:'#000000'
+    },
+    {
+      id:3,
+      titleLabel:'Vermelho',
+      color:'#FF0000'
+    },
+    {
+      id:4,
+      titleLabel:'Verde',
+      color:'#00FF00'
+    },
+    {
+      id:5,
+      titleLabel:'Azul',
+      color:'#0000FF'
+    },
+    {
+      id:6,
+      titleLabel:'Amarelo',
+      color:'#FFFF00'
+    },
+    {
+      id:7,
+      titleLabel:'Magenta',
+      color:'#800080'
+    },
+    {
+      id:8,
+      titleLabel:'Cinza',
+      color:'#808080'
+    },
+    {
+      id:9,
+      titleLabel:'Laranja',
+      color:'#FFA500'
+    },
+    {
+      id:10,
+      titleLabel:'Roxo',
+      color:'#800080'
+    }
+  ]
   get title()
   {
     return this.form.controls['title'];

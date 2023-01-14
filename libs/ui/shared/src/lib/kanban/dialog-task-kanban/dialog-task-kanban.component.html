@@ -64,7 +64,7 @@
             {{ handTag.value?.length === 2 ? 'other' : 'others' }})
           </span>
         </mat-select-trigger>
-        <mat-option *ngFor="let topping of handTagList" [value]="topping">{{topping}}</mat-option>
+        <mat-option *ngFor="let topping of handTagList" [value]="topping">{{topping.titleLabel}}</mat-option>
       </mat-select>
 
       <mat-error *ngIf="handTag.errors?.required">
