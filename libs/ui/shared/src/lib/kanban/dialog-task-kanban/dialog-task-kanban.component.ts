@@ -1,13 +1,15 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material/dialog";
 import {Task} from "../../../../../../data/src/lib/model/task";
-import {Label} from "../../../../../../data/src/lib/model/Label";
+import {TagLabel} from "../../../../../../data/src/lib/model/TagLabel";
 import {
 
   dateRangeValidator
 } from "../../../../../../utils/src/lib/validators/date-range-validator";
 import {minMaxLengthValidator} from "../../../../../../utils/src/lib/validators/min-max-length-descriptionTask";
+import {TagService} from "../kanban-services/label/tag.service";
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -15,7 +17,7 @@ import {minMaxLengthValidator} from "../../../../../../utils/src/lib/validators/
   templateUrl: './dialog-task-kanban.component.html',
   styleUrls: ['./dialog-task-kanban.component.css'],
 })
-export class DialogTaskKanbanComponent  {
+export class DialogTaskKanbanComponent  implements  OnInit{
 
   titleTask:string
   form = this.fb.group({
@@ -29,58 +31,9 @@ export class DialogTaskKanbanComponent  {
       validators:[dateRangeValidator('dateStartAt', 'dateEndAt')]
     });
 
-  handTagList:Label[]=[
-    {
-      id:1,
-      titleLabel:'Branco',
-      color:'#FFFFFF'
-    },
-    {
-      id:2,
-      titleLabel:'Preto',
-      color:'#000000'
-    },
-    {
-      id:3,
-      titleLabel:'Vermelho',
-      color:'#FF0000'
-    },
-    {
-      id:4,
-      titleLabel:'Verde',
-      color:'#00FF00'
-    },
-    {
-      id:5,
-      titleLabel:'Azul',
-      color:'#0000FF'
-    },
-    {
-      id:6,
-      titleLabel:'Amarelo',
-      color:'#FFFF00'
-    },
-    {
-      id:7,
-      titleLabel:'Magenta',
-      color:'#FF00FF'
-    },
-    {
-      id:8,
-      titleLabel:'Cinza',
-      color:'#808080'
-    },
-    {
-      id:9,
-      titleLabel:'Laranja',
-      color:'#FFA500'
-    },
-    {
-      id:10,
-      titleLabel:'Roxo',
-      color:'#800080'
-    }
-  ]
+  handTagList$:Observable<TagLabel[]>;
+
+
   get title()
   {
     return this.form.controls['title'];
@@ -103,9 +56,16 @@ export class DialogTaskKanbanComponent  {
   }
 
   constructor(private fb: FormBuilder,
+              private tags:TagService,
               @Inject(MAT_DIALOG_DATA) private task:Task,
               private dialogRef: MatDialogRef<DialogTaskKanbanComponent>) {
     this.titleTask = task.title;
+  }
+
+  ngOnInit()
+  {
+    this.handTagList$=this.tags.getAllTags();
+
   }
   close() {
 
@@ -117,8 +77,8 @@ export class DialogTaskKanbanComponent  {
     this.dialogRef.close(this.form.value);
 
   }
-  onHandTagRemoved(handTag: Label) {
-    const labels = this.form.controls['handTag'].value as Label[];
+  onHandTagRemoved(handTag: TagLabel) {
+    const labels = this.form.controls['handTag'].value as TagLabel[];
     this.removeFirst(labels, handTag);
     this.form.controls['handTag'].setValue([...labels]);
   }

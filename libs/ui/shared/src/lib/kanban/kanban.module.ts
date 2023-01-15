@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GenericExpansionInputComponent } from './generic-expansion-input/generic-expansion-input.component';
 import { DialogTaskKanbanComponent } from './dialog-task-kanban/dialog-task-kanban.component';
 import {MatLegacyChipsModule} from "@angular/material/legacy-chips";
+import {TagService} from "./kanban-services/label/tag.service";
 
 @NgModule({
   declarations: [
@@ -31,5 +32,8 @@ import {MatLegacyChipsModule} from "@angular/material/legacy-chips";
     FormsModule,
     MatLegacyChipsModule,
   ],
+  providers:[
+    TagService
+  ]
 })
 export class KanbanModule {}

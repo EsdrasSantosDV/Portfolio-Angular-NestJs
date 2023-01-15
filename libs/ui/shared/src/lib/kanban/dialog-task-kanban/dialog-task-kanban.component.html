@@ -70,8 +70,8 @@
             </mat-chip>
           </mat-chip-list>
         </mat-select-trigger>
-        <mat-option *ngFor="let handTag of handTagList" [value]="handTag" >{{
-          handTag.titleLabel
+        <mat-option *ngFor="let handTag of (handTagList$|async)" [value]="handTag" >{{
+          handTag.titleTag
           }}</mat-option>
       </mat-select>
       <mat-error *ngIf="handTag.errors?.required">
