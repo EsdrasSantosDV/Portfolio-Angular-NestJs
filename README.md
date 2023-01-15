@@ -22,8 +22,8 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
 
 ### Images Project
-![KANBAN INITIAL.png](..%2F..%2F..%2F..%2FImagens%2FIMAGENS%20README%2FKANBAN%20INITIAL.png)
-![LOGIN.png](..%2F..%2F..%2F..%2FImagens%2FIMAGENS%20README%2FLOGIN.png)
-![REGISTRAR.png](..%2F..%2F..%2F..%2FImagens%2FIMAGENS%20README%2FREGISTRAR.png)
-![REGISTRAR2.png](..%2F..%2F..%2F..%2FImagens%2FIMAGENS%20README%2FREGISTRAR2.png)
-![REGISTRAR3.png](..%2F..%2F..%2F..%2FImagens%2FIMAGENS%20README%2FREGISTRAR3.png)
+![REGISTRAR3.png](readme.images%2FREGISTRAR3.png)
+![KANBAN INITIAL.png](readme.images%2FKANBAN%20INITIAL.png)
+![LOGIN.png](readme.images%2FLOGIN.png)
+![REGISTRAR.png](readme.images%2FREGISTRAR.png)
+![REGISTRAR2.png](readme.images%2FREGISTRAR2.png)
