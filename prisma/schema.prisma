@@ -20,6 +20,13 @@ model User {
   @@map("user")
 }
 
+model Mural {
+  id    Int    @id @default(autoincrement())
+  title String @db.VarChar(200)
+  task  Task[]
+  @@map("mural")
+}
+
 model Task {
   id          Int       @id @default(autoincrement())
   title       String    @db.VarChar(255)
@@ -27,6 +34,8 @@ model Task {
   dateStartAt DateTime? @default(now())
   dateEndAt   DateTime? @default(now())
   tags        Tag[]
+  Mural       Mural?    @relation(fields: [muralId], references: [id])
+  muralId     Int?
 
   @@map("task")
 }

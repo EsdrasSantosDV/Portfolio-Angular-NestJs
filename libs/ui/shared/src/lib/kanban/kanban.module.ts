@@ -13,6 +13,7 @@ import { GenericExpansionInputComponent } from './generic-expansion-input/generi
 import { DialogTaskKanbanComponent } from './dialog-task-kanban/dialog-task-kanban.component';
 import {MatLegacyChipsModule} from "@angular/material/legacy-chips";
 import {TagService} from "./kanban-services/label/tag.service";
+import {TaskService} from "./kanban-services/task/task.service";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {TagService} from "./kanban-services/label/tag.service";
     MatLegacyChipsModule,
   ],
   providers:[
-    TagService
+    TagService,
+    TaskService
   ]
 })
 export class KanbanModule {}

@@ -6,8 +6,10 @@ import {
 } from '@angular/cdk/drag-drop';
 import { Lesson } from '../../../../../../data/src/lib/model/lesson';
 import { TaskKanbanComponent } from '../task-kanban/task-kanban.component';
-import { Task } from '../../../../../../data/src/lib/model/task';
+
 import { Mural } from '../../../../../../data/src/lib/model/Mural';
+import {TaskService} from "../kanban-services/task/task.service";
+import {TaskF} from "../../../../../../data/src/lib/model/task";
 
 @Component({
   selector: 'ui-list-drag-and-drops-kanban',
@@ -25,12 +27,12 @@ export class ListDragAndDropsKanbanComponent {
     }
   }
 
-  tasks: Task[] = [
+  tasks: TaskF[] = [
 
   ];
-  constructor() {}
+  constructor(private taskservice:TaskService) {}
 
-  dropMultiList(event: CdkDragDrop<Task[]>) {
+  dropMultiList(event: CdkDragDrop<TaskF[]>) {
 
     if (event.previousContainer == event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -43,21 +45,26 @@ export class ListDragAndDropsKanbanComponent {
       );
     }
 
-    console.log(this.tasks);
   }
 
-  drop(event: CdkDragDrop<Task[]>) {
+  drop(event: CdkDragDrop<TaskF[]>) {
     moveItemInArray(this.tasks, event.previousIndex, event.currentIndex);
   }
 
   taskCreate($event: string) {
 
+    const task:TaskF={
+      title: $event,
+    }
+    this.taskservice.createTask(task).subscribe();
+
     this.tasks.push({
+
       title: $event,
       description: '',
       dateStartAt:'',
       dateEndAt:'',
-      handTag:'',
+      tags:[],
 
     });
   }

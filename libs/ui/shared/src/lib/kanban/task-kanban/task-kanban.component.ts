@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Task} from "../../../../../../data/src/lib/model/task";
+import { TaskF} from "../../../../../../data/src/lib/model/task";
 import {openEditTaskDialog} from "../dialog-task-kanban/dialog-task-kanban.component";
 import {MatDialog} from "@angular/material/dialog";
 import {filter} from "rxjs";
@@ -12,7 +12,7 @@ import {logger} from "nx/src/utils/logger";
 })
 export class TaskKanbanComponent {
   @Input()
-  task:Task;
+  task:TaskF;
 
 
   constructor(private dialog: MatDialog) {
@@ -20,7 +20,7 @@ export class TaskKanbanComponent {
   }
 
 
-  editTask(task: Task) {
+  editTask(task: TaskF) {
 
     openEditTaskDialog(this.dialog,task).pipe(filter(val=>!!val)).subscribe(
       val => console.log('new task value:', val)

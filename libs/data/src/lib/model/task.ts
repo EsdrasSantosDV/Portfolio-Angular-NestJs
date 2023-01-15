@@ -1,10 +1,12 @@
 import {Validators} from "@angular/forms";
+import {TagLabel} from "./TagLabel";
 
-export interface Task {
+export interface TaskF {
+  id?:number|null,
   title:string,
   description?:string;
   dateStartAt?:string;
   dateEndAt?:string;
-  handTag?:string;
+  tags?:TagLabel[];
 
 }

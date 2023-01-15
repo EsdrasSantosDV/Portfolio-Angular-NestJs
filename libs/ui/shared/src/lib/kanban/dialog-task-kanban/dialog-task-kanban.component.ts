@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material/dialog";
-import {Task} from "../../../../../../data/src/lib/model/task";
+
 import {TagLabel} from "../../../../../../data/src/lib/model/TagLabel";
 import {
 
@@ -10,6 +10,7 @@ import {
 import {minMaxLengthValidator} from "../../../../../../utils/src/lib/validators/min-max-length-descriptionTask";
 import {TagService} from "../kanban-services/label/tag.service";
 import {Observable} from "rxjs";
+import {TaskF} from "../../../../../../data/src/lib/model/task";
 
 
 @Component({
@@ -57,7 +58,7 @@ export class DialogTaskKanbanComponent  implements  OnInit{
 
   constructor(private fb: FormBuilder,
               private tags:TagService,
-              @Inject(MAT_DIALOG_DATA) private task:Task,
+              @Inject(MAT_DIALOG_DATA) private task:TaskF,
               private dialogRef: MatDialogRef<DialogTaskKanbanComponent>) {
     this.titleTask = task.title;
   }
@@ -96,7 +97,7 @@ export class DialogTaskKanbanComponent  implements  OnInit{
 }
 
 
-export function openEditTaskDialog(dialog: MatDialog, task:Task) {
+export function openEditTaskDialog(dialog: MatDialog, task:TaskF) {
 
   const config = new MatDialogConfig();
 
