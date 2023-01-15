@@ -16,6 +16,27 @@ model User {
   name      String
   admin     Boolean  @default(false)
   createdAt DateTime @default(now())
+
   @@map("user")
 }
 
+model Task {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  dateStartAt DateTime
+  dateEndAt   DateTime
+  tags        Tag[]
+
+  @@map("task")
+}
+
+model Tag {
+  id       Int    @id @default(autoincrement())
+  titleTag String
+  color    String
+  Task   Task? @relation(fields: [taskId], references: [id])
+  taskId Int?
+
+  @@map("tag")
+}

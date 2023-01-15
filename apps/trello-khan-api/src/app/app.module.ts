@@ -4,10 +4,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 import { UsersModule } from './users/users.module';
+import { TagModule } from './tag/tag.module';
 
 
 @Module({
-  imports: [UsersModule],
+  imports: [UsersModule, TagModule],
   controllers: [AppController],
   providers: [AppService],
 })
