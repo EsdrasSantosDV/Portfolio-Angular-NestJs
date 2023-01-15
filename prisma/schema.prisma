@@ -21,11 +21,11 @@ model User {
 }
 
 model Task {
-  id          Int      @id @default(autoincrement())
-  title       String
-  description String
-  dateStartAt DateTime
-  dateEndAt   DateTime
+  id          Int       @id @default(autoincrement())
+  title       String    @db.VarChar(255)
+  description String?
+  dateStartAt DateTime? @default(now())
+  dateEndAt   DateTime? @default(now())
   tags        Tag[]
 
   @@map("task")
@@ -35,8 +35,8 @@ model Tag {
   id       Int    @id @default(autoincrement())
   titleTag String
   color    String
-  Task   Task? @relation(fields: [taskId], references: [id])
-  taskId Int?
+  Task     Task?  @relation(fields: [taskId], references: [id])
+  taskId   Int?
 
   @@map("tag")
 }

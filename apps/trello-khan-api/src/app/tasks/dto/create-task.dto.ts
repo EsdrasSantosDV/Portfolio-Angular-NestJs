@@ -1,14 +1,20 @@
-import {IsDate, IsString} from "class-validator";
+import {IsDate, IsOptional, IsString} from "class-validator";
 export class CreateTaskDto {
 
   @IsDate()
-  dateEndAt:Date
+  @IsOptional()
+  dateEndAt?:Date
+
   @IsDate()
-  dateStartAt:Date
+  @IsOptional()
+  dateStartAt?:Date
   @IsString()
+
   title:string;
+
   @IsString()
-  description:string;
+  @IsOptional()
+  description?:string;
 
 
 
