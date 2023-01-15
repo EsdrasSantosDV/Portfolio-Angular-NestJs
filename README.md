@@ -11,6 +11,12 @@ Run `nx serve trello-esdras` for a front-end server. Navigate to http://localhos
 
 ## Development server BACKEND
 Run `nx serve trello-khan-api` for a back-end serve. Navigate to http://localhost:3333/api. The app will automatically reload if you change any of the source files.
+
+## Development Prisma Development config
+Run `npm run studio` running prisma studio
+Run `npm run prisma:generate` run on every prisma schema change
+Run `npm run migrate` run the migrations
+
 ## Understand this workspace
 
 Run `nx graph` to see a diagram of the dependencies of the projects.
