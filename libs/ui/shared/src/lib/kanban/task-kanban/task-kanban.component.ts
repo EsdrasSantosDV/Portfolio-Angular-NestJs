@@ -1,9 +1,10 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, ViewChild} from '@angular/core';
 import { TaskF} from "../../../../../../data/src/lib/model/task";
 import {openEditTaskDialog} from "../dialog-task-kanban/dialog-task-kanban.component";
 import {MatDialog} from "@angular/material/dialog";
 import {filter} from "rxjs";
 import {logger} from "nx/src/utils/logger";
+import {MatExpansionPanel} from "@angular/material/expansion";
 
 @Component({
   selector: 'ui-task-kanban',

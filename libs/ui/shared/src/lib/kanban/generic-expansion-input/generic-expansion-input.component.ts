@@ -1,4 +1,5 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {MatExpansionPanel} from "@angular/material/expansion";
 
 @Component({
   selector: 'ui-generic-expansion-input',
@@ -14,6 +15,7 @@ export class GenericExpansionInputComponent {
   @Input()
   labelProperty?:string;
 
+  @ViewChild(MatExpansionPanel) expansionPanel: MatExpansionPanel;
 
 
 
@@ -21,6 +23,7 @@ export class GenericExpansionInputComponent {
   }
 
   addInput() {
+    this.expansionPanel.close();
     this.inputCreated.emit(this.modelInput);
   }
 }
