@@ -1,32 +1,27 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable, shareReplay} from "rxjs";
-import {Task} from "@prisma/client";
-import {TaskF} from "../../../../../../../data/src/lib/model/task";
-
+import {MuralF} from "../../../../../../../data/src/lib/model/Mural";
 
 @Injectable({
   providedIn: 'root'
 })
-export class TaskService {
 
-  constructor(private http:HttpClient) { }
+export class MuralService {
 
-  createTask(task: TaskF):Observable<TaskF>
-  {
+  constructor(private http: HttpClient) {
+  }
+
+  createMural(mural: MuralF): Observable<MuralF> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
-    return this.http.post<TaskF>('http://localhost:3333/api/tasks', task,httpOptions).pipe(
+    return this.http.post<MuralF>('http://localhost:3333/api/murals', mural, httpOptions).pipe(
       shareReplay()
     );
   }
-
-
-
-
 
 
 }

@@ -23,7 +23,7 @@ model User {
 model Mural {
   id    Int    @id @default(autoincrement())
   title String @db.VarChar(200)
-  task  Task[]
+  tasks  Task[]
   @@map("mural")
 }
 

@@ -14,6 +14,7 @@ import { DialogTaskKanbanComponent } from './dialog-task-kanban/dialog-task-kanb
 import {MatLegacyChipsModule} from "@angular/material/legacy-chips";
 import {TagService} from "./kanban-services/label/tag.service";
 import {TaskService} from "./kanban-services/task/task.service";
+import {MuralService} from "./kanban-services/mural/mural.service";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {TaskService} from "./kanban-services/task/task.service";
   ],
   providers:[
     TagService,
-    TaskService
+    TaskService,
+    MuralService
   ]
 })
 export class KanbanModule {}

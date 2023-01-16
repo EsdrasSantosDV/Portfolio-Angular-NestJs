@@ -9,7 +9,7 @@ export class MuralRepository {
   constructor(private readonly prisma: PrismaService) {}
 
   async create(createMuralDto: CreateMuralDto): Promise<MuralEntity> {
-    return this.prisma.task.create({
+    return this.prisma.mural.create({
       data: createMuralDto,
     });
   }

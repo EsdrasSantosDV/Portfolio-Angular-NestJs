@@ -4,10 +4,8 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
-import { Lesson } from '../../../../../../data/src/lib/model/lesson';
-import { TaskKanbanComponent } from '../task-kanban/task-kanban.component';
 
-import { Mural } from '../../../../../../data/src/lib/model/Mural';
+import { MuralF} from '../../../../../../data/src/lib/model/Mural';
 import {TaskService} from "../kanban-services/task/task.service";
 import {TaskF} from "../../../../../../data/src/lib/model/task";
 
@@ -17,11 +15,11 @@ import {TaskF} from "../../../../../../data/src/lib/model/task";
   styleUrls: ['./list-drag-and-drops-kanban.component.scss'],
 })
 export class ListDragAndDropsKanbanComponent {
-  _Mural!: Mural;
+  _Mural!: MuralF;
   get mural() {
     return this._Mural;
   }
-  @Input() set mural(value: Mural) {
+  @Input() set mural(value: MuralF) {
     if (value) {
       this._Mural = value;
     }

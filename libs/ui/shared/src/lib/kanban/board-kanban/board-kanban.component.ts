@@ -1,6 +1,9 @@
 import {Component, OnChanges, SimpleChanges} from '@angular/core';
 import {ListDragAndDropsKanbanComponent} from "../list-drag-and-drops-kanban/list-drag-and-drops-kanban.component";
-import {Mural} from "../../../../../../data/src/lib/model/Mural";
+import {MuralF} from "../../../../../../data/src/lib/model/Mural";
+import {MuralService} from "../kanban-services/mural/mural.service";
+
+
 
 @Component({
   selector: 'ui-board-kanban',
@@ -8,9 +11,13 @@ import {Mural} from "../../../../../../data/src/lib/model/Mural";
   styleUrls: ['./board-kanban.component.css'],
 })
 export class BoardKanbanComponent {
-  murals:Mural[]=[]
-  constructor() {}
+  murals:MuralF[]=[]
+  constructor(private muralservice:MuralService) {}
   muralCreate($event: string) {
+    const mural:MuralF={
+      title: $event,
+    }
+    this.muralservice.createMural(mural).subscribe();
     this.murals.push({title:$event});
   }
 }
