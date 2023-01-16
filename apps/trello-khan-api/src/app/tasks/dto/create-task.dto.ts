@@ -1,4 +1,4 @@
-import {IsDate, IsOptional, IsString} from "class-validator";
+import {IsDate, IsNumber, IsOptional, IsString} from "class-validator";
 export class CreateTaskDto {
 
   @IsDate()
@@ -17,6 +17,9 @@ export class CreateTaskDto {
   description?:string;
 
 
+  @IsNumber()
+  @IsOptional()
+  muralId?:number;
 
 
 }

@@ -12,4 +12,5 @@ export class TaskEntity implements Task{
   id: number;
   title: string;
 
+  muralId:number|null;
 }

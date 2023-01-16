@@ -25,5 +25,6 @@ export class GenericExpansionInputComponent {
   addInput() {
     this.expansionPanel.close();
     this.inputCreated.emit(this.modelInput);
+    this.modelInput='';
   }
 }

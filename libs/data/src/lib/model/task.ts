@@ -8,5 +8,5 @@ export interface TaskF {
   dateStartAt?:string;
   dateEndAt?:string;
   tags?:TagLabel[];
-
+  muralId?:number|null;
 }
