@@ -17,7 +17,7 @@ export class MuralRepository {
   async findAll(): Promise<MuralEntity[]> {
     return this.prisma.mural.findMany({
       include: {
-        task: true
+        tasks: true
       },
     });
   }
@@ -28,7 +28,7 @@ export class MuralRepository {
         id: id,
       },
       include: {
-        task:true
+        tasks:true
       },
     });
   }
@@ -40,7 +40,7 @@ export class MuralRepository {
       },
       data: updateMuralDto,
       include: {
-        task:true
+        tasks:true
       },
     });
   }

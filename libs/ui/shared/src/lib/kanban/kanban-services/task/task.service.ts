@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable, shareReplay} from "rxjs";
+import {catchError, map, Observable, shareReplay, throwError} from "rxjs";
 import {Task} from "@prisma/client";
 import {TaskF} from "../../../../../../../data/src/lib/model/task";
 
@@ -20,8 +20,10 @@ export class TaskService {
       })
     };
     return this.http.post<TaskF>('http://localhost:3333/api/tasks', task,httpOptions).pipe(
-      shareReplay()
-    );
+    map((response) => response),
+    shareReplay(),
+    catchError((error) => throwError(error))
+  );
   }
 
 

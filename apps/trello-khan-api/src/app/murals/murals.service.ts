@@ -12,7 +12,7 @@ export class MuralsService {
 
   }
 
-  create(createMuralDto: CreateMuralDto) {
+  create(createMuralDto: CreateMuralDto):Promise<MuralEntity> {
     return this.muralRepository.create(createMuralDto);
   }
 

@@ -53,6 +53,7 @@ export class ListDragAndDropsKanbanComponent {
 
     const task:TaskF={
       title: $event,
+      muralId:this.mural.id
     }
     this.taskservice.createTask(task).subscribe();
 
@@ -63,6 +64,7 @@ export class ListDragAndDropsKanbanComponent {
       dateStartAt:'',
       dateEndAt:'',
       tags:[],
+      muralId:this.mural.id
 
     });
   }

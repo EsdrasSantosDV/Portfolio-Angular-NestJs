@@ -1,7 +1,8 @@
 import {TagLabel} from "./TagLabel";
 
 export interface MuralF {
-  title?:string,
+  id?:number|null,
+  title:string,
   tasks?:TagLabel[];
 
 
